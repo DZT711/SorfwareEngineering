@@ -101,27 +101,40 @@ function CalculateNaturalNumbers() {
         return;
     }
 
-    let lessEqualN = [];
-    let evenLessEqualN = [];
-    let oddLessEqualN = [];
-    let primeLessEqualN = [];
+    // let lessEqualN = [];
+    // let evenLessEqualN = [];
+    // let oddLessEqualN = [];
+    // let primeLessEqualN = [];
+    let lessEqualN = '';
+    let evenLessEqualN = '';
+    let oddLessEqualN = '';
+    let primeLessEqualN = '';    
+    let sumLessEqualN = 0;
+    let sumEvenLessEqualN = 0;
+    let sumOddLessEqualN = 0;
 
     for (let i = 1; i <= n; i++) {
-        lessEqualN.push(i);
+        lessEqualN += i + ', ';
+        sumLessEqualN += i;
         if (i % 2 === 0) {
-            evenLessEqualN.push(i);
+            evenLessEqualN += i + ', ';
+            sumEvenLessEqualN += i;
         } else {
-            oddLessEqualN.push(i);
+            oddLessEqualN += i + ', ';
+            sumOddLessEqualN += i;
         }
         if (isPrimeNumber(i)) {
-            primeLessEqualN.push(i);
+            primeLessEqualN += i + ', ';
         }
     }
 
-    document.getElementById('less-equal-n').textContent = lessEqualN.join(', ');
-    document.getElementById('even-less-equal-n').textContent = evenLessEqualN.join(', ');
-    document.getElementById('odd-less-equal-n').textContent = oddLessEqualN.join(', ');
-    document.getElementById('prime-less-equal-n').textContent = primeLessEqualN.join(', ');
+    document.getElementById('less-equal-n').textContent = lessEqualN.slice(0, -2);
+    document.getElementById('even-less-equal-n').textContent = evenLessEqualN.slice(0, -2);
+    document.getElementById('odd-less-equal-n').textContent = oddLessEqualN.slice(0, -2);
+    document.getElementById('prime-less-equal-n').textContent = primeLessEqualN.slice(0, -2);
+    document.getElementById('sum-less-equal-n').value = sumLessEqualN;
+    document.getElementById('sum-even-less-equal-n').value = sumEvenLessEqualN;
+    document.getElementById('sum-odd-less-equal-n').value = sumOddLessEqualN;
 }
 
 function isPrimeNumber(num) {
@@ -130,4 +143,44 @@ function isPrimeNumber(num) {
         if (num % i === 0) return false;
     }
     return true;
+}
+
+
+
+function CheckAnswer() {
+    const answer = document.getElementById('answer')?.value.trim().toLowerCase();
+// Replace with the actual correct answer
+    const firstNumber = parseFloat(document.getElementById('first-number')?.value);
+    const secondNumber = parseFloat(document.getElementById('second-number')?.value);
+    const opEl = document.querySelector('input[name="operation"]:checked');
+    const operation = opEl ? opEl.value : null;
+
+    if (isNaN(firstNumber) || isNaN(secondNumber)) {
+        document.getElementById('result').value = 'Invalid input';
+        return;
+    }
+
+    let result;
+    switch (operation) {
+        case 'add':
+            result = firstNumber + secondNumber;
+            break;
+        case 'subtract':
+            result = firstNumber - secondNumber;
+            break;
+        case 'multiply':
+            result = firstNumber * secondNumber;
+            break;
+        case 'divide':
+            result = secondNumber === 0 ? 'Cannot divide by zero' : firstNumber / secondNumber;
+            break;
+        default:
+            result = 'Vui lòng chọn phép tính';
+    }
+    const correctAnswer = result.toString().trim(); 
+    if (answer === correctAnswer) {
+        alert('Chính xác!');
+    } else {
+        alert('Sai rồi!');
+    }
 }

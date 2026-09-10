@@ -176,4 +176,87 @@
 </form>
 
 
-<h1
+<h1>6.	Thiết kế form và viết chương trình Giúp bé làm toán số học như sau: bé nhập số tự nhiên thứ 1, nhập số tự nhiên thứ 2, chọn phép toán (+, -, *, /), nhập đáp số. chương trình kiểm tra và xuất thông báo bé làm đúng hay sai</h1>
+<form action="get" id="calculate">
+  <label for="first-number">Số tự nhiên thứ 1:</label>
+  <input
+    type="text"
+    id="first-number"
+    placeholder="Nhập số tự nhiên thứ 1"
+  /><br />
+
+  <label for="second-number">Số tự nhiên thứ 2:</label>
+  <input
+    type="text"
+    id="second-number"
+    placeholder="Nhập số tự nhiên thứ 2"
+  /><br />
+
+  <label>Chọn phép tính:</label>
+  <input type="radio" id="op-add" name="operation" value="add" /><label
+    for="op-add"
+    >Cộng</label
+  >
+  <input type="radio" id="op-subtract" name="operation" value="subtract" /><label
+    for="op-subtract"
+    >Trừ</label
+  >
+  <input type="radio" id="op-multiply" name="operation" value="multiply" /><label
+    for="op-multiply"
+    >Nhân</label
+  >
+  <input type="radio" id="op-divide" name="operation" value="divide" /><label
+    for="op-divide"
+    >Chia</label
+  ><br
+  <label for="answer">Đáp số:</label>
+  <input type="text" id="answer" placeholder="Nhập đáp số" /><br />
+  <button type="button" id="calc-btn" onclick="CheckAnswer()">Kiểm tra</button
+  ><br />
+  </form>
+
+<h1>7.	Thiết kế form và viết chương trình nhập số tự nhiên N, nhập N phần tử của mảng số nguyên a, xuất kết quả:
+</h1>
+<h1>
+
+  a.	Các phần tử của mảng a và tổng của chúng
+</h1>
+<h1>
+  b.	Các phần tử chẵn của mảng a và tổng của chúng
+</h1>
+<h1>
+  c.	Các phần tử lẻ của mảng a và tổng của chúng
+</h1>
+<h1>
+  d.	Các phần tử là số nguyên tố của mảng a và tổng của chúng
+</h1>
+<h1>
+  e.	Thêm 1 phần tử mới vào mảng
+</h1>
+<h1>
+  f.	Xoá phần tử thứ k của mảng a
+</h1>
+<h1>
+  g.	nhập 1 số x, kiểm tra x có trong mảng a không, nếu có thì trả về vị trí của x trong mảng a
+</h1>
+<form action="get" id="calculate">
+  <label for="array-size">Số lượng phần tử N:</label>
+  <input
+    type="text"
+    id="array-size"
+    placeholder="Nhập số lượng phần tử N"
+  /><br />
+
+  <label for="array-elements">Các phần tử của mảng a:</label>
+  <input
+    type="text"
+    id="array-elements"
+    placeholder="Nhập các phần tử của mảng a, cách nhau bằng dấu phẩy"
+  /><br />
+
+  <button type="button" id="calc-btn" onclick="CalculateArray()">Tính</button
+  ><br />
+
+  <label for="result-array">Kết quả:</label>
+  <input type="text" id="result-array" disabled placeholder="Kết quả" />
+  </form>
