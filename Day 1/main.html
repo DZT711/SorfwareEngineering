@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>
+      1. Thiết kế form và viết chương trình nhập 2 số. Xuất tổng hiệu tích
+      thương
+    </h1>
+    <h1>a. Dùng button</h1>
+    <h1>b. Dùng radio button</h1>
+    <form action="get" id="calculate">
+      <label for="a">Số a:</label>
+      <input type="text" id="a" placeholder="Nhập số a" /><br />
+
+      <label for="b">Số b:</label>
+      <input type="text" id="b" placeholder="Nhập số b" /><br />
+
+      <label>Chọn phép tính:</label>
+      <input type="radio" id="op-sum" name="operation" value="sum" /><label
+        for="op-sum"
+        >Tổng</label
+      >
+      <input
+        type="radio"
+        id="op-difference"
+        name="operation"
+        value="difference"
+      /><label for="op-difference">Hiệu</label>
+      <input
+        type="radio"
+        id="op-product"
+        name="operation"
+        value="product"
+      /><label for="op-product">Tích</label>
+      <input
+        type="radio"
+        id="op-quotient"
+        name="operation"
+        value="quotient"
+      /><label for="op-quotient">Thương</label>
+      <!-- <button type="submit">Tính tổng</button>
+        <button type="submit">Tính hiệu</button>
+        <button type="submit">Tính tích</button>
+        <button type="submit">Tính thương</button> -->
+      <br />
+      <button type="button" id="calc-btn" onclick="Calculate()">Tính</button
+      ><br />
+
+      <label for="result">Kết quả:</label>
+      <input type="text" id="result" disabled placeholder="Kết quả" />
+    </form>
+  </body>
+</html>
+<h1>
+  2. Thiết kế form và viết chương trình nhập chiều dài, chiều rộng. Xuất diện
+  tích, chu vi hình chữ nhật
+</h1>
+<form action="get" id="calculate">
+  <label for="length">Chiều dài:</label>
+  <input type="text" id="length" placeholder="Nhập chiều dài" /><br />
+
+  <label for="width">Chiều rộng:</label>
+  <input type="text" id="width" placeholder="Nhập chiều rộng" /><br />
+
+  <button type="button" id="calc-btn" onclick="CalculateRectangle()">
+    Tính</button
+  ><br />
+
+  <label for="area">Diện tích:</label>
+  <input type="text" id="area" disabled placeholder="Diện tích" /><br />
+
+  <label for="perimeter">Chu vi:</label>
+  <input type="text" id="perimeter" disabled placeholder="Chu vi" />
+</form>
+
+<h1>
+  3. Thiết kế form và viết chương trình nhập bán kính r. Xuất diện tích, chu vi
+  hình tròn
+</h1>
+<form action="get" id="calculate">
+  <label for="radius">Bán kính:</label>
+  <input type="text" id="radius" placeholder="Nhập bán kính" /><br />
+
+  <button type="button" id="calc-btn" onclick="CalculateCircle()">Tính</button
+  ><br />
+
+  <label for="circle-area">Diện tích:</label>
+  <input type="text" id="circle-area" disabled placeholder="Diện tích" /><br />
+
+  <label for="circle-circumference">Chu vi:</label>
+  <input type="text" id="circle-circumference" disabled placeholder="Chu vi" />
+</form>
+
+<h1>
+  4. Thiết kế form và viết chương trình nhập số tự nhiên n. Kiểm tra n là nguyên
+  tố
+</h1>
+<form action="get" id="calculate">
+  <label for="natural-number">Số tự nhiên n:</label>
+  <input
+    type="text"
+    id="natural-number"
+    placeholder="Nhập số tự nhiên n"
+  /><br />
+
+  <button type="button" id="calc-btn" onclick="CheckPrime()">Kiểm tra</button
+  ><br />
+
+  <label for="is-prime">Kết quả:</label>
+  <input type="text" id="is-prime" disabled placeholder="Kết quả" />
+</form>
+
+<h1>5. Thiết kế form và viết chương trình nhập số tự nhiên n. Xuất</h1>
+<h1>a. Các số tự nhiên <=n và tổng của chúng</h1>
+<h1>b. Các số tự nhiên chẵn <=n và tổng của chúng</h1>
+<h1>c. Các số tự nhiên lẻ <=n và tổng của chúng</h1>
+<h1>d. Các số tự nhiên là số nguyên tố <=n và tổng của chúng</h1>
+<h1>e. N số nguyên tố đầu tiên</h1>
+<form action="get" id="calculate">
+  <label for="natural-number-2">Số tự nhiên n:</label>
+  <input
+    type="text"
+    id="natural-number-2"
+    placeholder="Nhập số tự nhiên n"
+  /><br />
+
+  <label for="less-equal-n">Các số tự nhiên <=n:</label>
+  <!-- <input type="text" id="less-equal-n" disabled placeholder="Các số tự nhiên <=n" /><br /> -->
+  <p id="less-equal-n"></p>
+  <label for="sum-less-equal-n">Tổng các số tự nhiên <=n:</label>
+  <input
+    type="text"
+    id="sum-less-equal-n"
+    disabled
+    placeholder="Tổng các số tự nhiên <=n"
+  /><br />
+
+  <label for="even-less-equal-n">Các số tự nhiên chẵn <=n:</label>
+  <!-- <input type="text" id="even-less-equal-n" disabled placeholder="Các số tự nhiên chẵn <=n" /><br /> -->
+  <p id="even-less-equal-n"></p>
+
+  <label for="sum-even-less-equal-n">Tổng các số tự nhiên chẵn <=n:</label>
+  <input
+    type="text"
+    id="sum-even-less-equal-n"
+    disabled
+    placeholder="Tổng các số tự nhiên chẵn <=n"
+  /><br />
+
+  <label for="odd-less-equal-n">Các số tự nhiên lẻ <=n:</label>
+  <!-- <input type="text" id="odd-less-equal-n" disabled placeholder="Các số tự nhiên lẻ <=n" /><br /> -->
+  <p id="odd-less-equal-n"></p>
+
+  <label for="sum-odd-less-equal-n">Tổng các số tự nhiên lẻ <=n:</label>
+  <input
+    type="text"
+    id="sum-odd-less-equal-n"
+    disabled
+    placeholder="Tổng các số tự nhiên lẻ <=n"
+  /><br />
+
+  <label for="prime-less-equal-n">N các số nguyên tố <=n:</label>
+  <!-- <input type="text" id="prime-less-equal-n" disabled placeholder="Các số nguyên tố <=n" /><br /> -->
+  <p id="prime-less-equal-n"></p>
+  <button type="button" id="calc-btn" onclick="CalculateNaturalNumbers()">
+    Tính</button
+  ><br />
+
+  <!-- <label for="result-natural-numbers">Kết quả:</label>
+          <input type="text" id="result-natural-numbers" disabled placeholder="Kết quả" /> -->
+</form>
