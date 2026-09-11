@@ -1,0 +1,299 @@
+:root {
+  --ink: #182433;
+  --muted: #6b7785;
+  --line: #dce4ec;
+  --paper: #ffffff;
+  --wash: #f3f7fb;
+  --blue: #2364aa;
+  --blue-dark: #174a83;
+  --mint: #d9f2e7;
+  --coral: #fff0e9;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #edf3f8;
+  color: var(--ink);
+}
+.student-app {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 74px 22px 90px;
+  font:
+    16px/1.5 Georgia,
+    "Times New Roman",
+    serif;
+}
+.student-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+.student-kicker {
+  margin: 0 0 7px;
+  color: var(--blue);
+  font:
+    700 12px/1.2 "Trebuchet MS",
+    sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.student-hero h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1;
+  font-weight: 500;
+}
+.student-hero > p {
+  max-width: 380px;
+  margin: 0;
+  color: var(--muted);
+  font:
+    15px/1.6 "Trebuchet MS",
+    sans-serif;
+}
+.student-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.student-panel,
+.student-list {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 14px 35px rgba(24, 36, 51, 0.07);
+}
+.student-panel {
+  padding: 23px;
+  border-top: 4px solid var(--blue);
+}
+.student-panel h2,
+.student-list h2 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.student-form {
+  display: grid;
+  gap: 14px;
+}
+.student-field {
+  display: grid;
+  gap: 6px;
+}
+.student-field label {
+  color: var(--muted);
+  font:
+    700 12px "Trebuchet MS",
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.student-field input,
+.student-field select,
+.student-toolbar input,
+.student-toolbar select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--wash);
+  color: var(--ink);
+  padding: 11px 12px;
+  font:
+    15px "Trebuchet MS",
+    sans-serif;
+}
+.student-field input:focus,
+.student-field select:focus,
+.student-toolbar input:focus,
+.student-toolbar select:focus {
+  outline: 2px solid rgba(35, 100, 170, 0.22);
+  border-color: var(--blue);
+}
+.student-actions {
+  display: flex;
+  gap: 9px;
+  margin-top: 6px;
+}
+.student-button {
+  border: 0;
+  cursor: pointer;
+  padding: 11px 16px;
+  font:
+    700 13px "Trebuchet MS",
+    sans-serif;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+.student-button:hover {
+  transform: translateY(-1px);
+}
+.student-button.primary {
+  flex: 1;
+  background: var(--blue);
+  color: #fff;
+}
+.student-button.primary:hover {
+  background: var(--blue-dark);
+}
+.student-button.secondary {
+  background: #e9eef3;
+  color: var(--ink);
+}
+.student-button.show-all {
+  background: #e2edf8;
+  color: var(--blue-dark);
+  white-space: nowrap;
+}
+.student-button.show-all:hover {
+  background: #d4e4f4;
+}
+.student-button.danger {
+  padding: 7px 10px;
+  background: var(--coral);
+  color: #a34729;
+}
+.student-message {
+  min-height: 21px;
+  margin: 12px 0 0;
+  color: #a34729;
+  font:
+    13px "Trebuchet MS",
+    sans-serif;
+}
+.student-list {
+  min-width: 0;
+  padding: 23px;
+}
+.student-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.student-stat {
+  padding: 13px 15px;
+  background: var(--wash);
+  border-left: 3px solid var(--blue);
+}
+.student-stat strong {
+  display: block;
+  font-size: 27px;
+  font-weight: 500;
+}
+.student-stat span {
+  color: var(--muted);
+  font:
+    11px "Trebuchet MS",
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+.student-toolbar {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr auto;
+  gap: 9px;
+  margin-bottom: 17px;
+}
+.student-table-wrap {
+  overflow-x: auto;
+}
+.student-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  font:
+    14px "Trebuchet MS",
+    sans-serif;
+}
+.student-table th {
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--ink);
+  color: var(--muted);
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.student-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.student-table tbody tr {
+  transition: background 0.18s ease;
+}
+.student-table tbody tr:hover {
+  background: #f8fbfd;
+}
+.student-name {
+  font-weight: 700;
+}
+.student-id {
+  color: var(--muted);
+  font-size: 12px;
+}
+.student-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background: var(--mint);
+  color: #287052;
+  font-size: 11px;
+}
+.student-badge.inactive {
+  background: #eef0f2;
+  color: #65707c;
+}
+.student-row-actions {
+  display: flex;
+  gap: 6px;
+}
+.student-icon-button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--blue);
+  cursor: pointer;
+  padding: 6px 9px;
+  font:
+    700 12px "Trebuchet MS",
+    sans-serif;
+}
+.student-icon-button:hover {
+  background: var(--wash);
+}
+.student-empty {
+  padding: 32px 14px;
+  color: var(--muted);
+  text-align: center;
+}
+@media (max-width: 820px) {
+  .student-hero {
+    display: block;
+  }
+  .student-hero > p {
+    margin-top: 14px;
+  }
+  .student-layout {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 520px) {
+  .student-app {
+    padding: 45px 13px 60px;
+  }
+  .student-stats,
+  .student-toolbar {
+    grid-template-columns: 1fr;
+  }
+  .student-panel,
+  .student-list {
+    padding: 17px;
+  }
+}

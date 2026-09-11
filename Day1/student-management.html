@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="student-management.css" />
+    <script src="student-management.js" defer></script>
+  </head>
+  <body>
+    <main class="student-app" aria-labelledby="student-title">
+      <header class="student-hero">
+        <div>
+          <p class="student-kicker">Student records / 09</p>
+          <h1 id="student-title">Quản lý sinh viên</h1>
+        </div>
+        <p>
+          Một bảng điều khiển gọn gàng để thêm, chỉnh sửa, tìm kiếm và quản lý
+          danh sách sinh viên.
+        </p>
+      </header>
+
+      <div class="student-layout">
+        <section class="student-panel" aria-labelledby="student-form-title">
+          <h2 id="student-form-title">Thêm sinh viên</h2>
+          <form id="student-form" class="student-form">
+            <input type="hidden" id="student-id" />
+            <div class="student-field">
+              <label for="student-name">Họ và tên</label
+              ><input
+                id="student-name"
+                required
+                placeholder="Nguyễn Minh Anh"
+              />
+            </div>
+            <div class="student-field">
+              <label for="student-email">Email</label
+              ><input
+                id="student-email"
+                type="email"
+                required
+                placeholder="minhanh@email.com"
+              />
+            </div>
+            <div class="student-field">
+              <label for="student-age">Tuổi</label
+              ><input
+                id="student-age"
+                type="number"
+                min="16"
+                max="80"
+                required
+                placeholder="20"
+              />
+            </div>
+            <div class="student-field">
+              <label for="student-major">Chuyên ngành</label
+              ><select id="student-major">
+                <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+                <option value="Thiết kế đồ họa">Thiết kế đồ họa</option>
+                <option value="Kinh tế">Kinh tế</option>
+                <option value="Ngôn ngữ Anh">Ngôn ngữ Anh</option>
+                <option value="Kỹ thuật">Kỹ thuật</option>
+              </select>
+            </div>
+            <div class="student-field">
+              <label for="student-gender">Giới tính</label
+              ><select id="student-gender">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Khác">Khác</option>
+              </select>
+            </div>
+            <div class="student-field">
+              <label for="student-status">Trạng thái</label
+              ><select id="student-status">
+                <option value="active">Đang học</option>
+                <option value="inactive">Bảo lưu</option>
+              </select>
+            </div>
+            <div class="student-actions">
+              <button
+                class="student-button primary"
+                type="submit"
+                id="student-submit"
+              >
+                Thêm sinh viên</button
+              ><button
+                class="student-button secondary"
+                type="button"
+                id="student-cancel"
+                hidden
+              >
+                Hủy
+              </button>
+            </div>
+          </form>
+          <p class="student-message" id="student-message" role="status"></p>
+        </section>
+
+        <section class="student-list" aria-labelledby="student-list-title">
+          <!-- <div class="student-stats">
+            <div class="student-stat">
+              <strong id="student-total">0</strong><span>Tổng sinh viên</span>
+            </div>
+            <div class="student-stat">
+              <strong id="student-active">0</strong><span>Đang học</span>
+            </div>
+            <div class="student-stat">
+              <strong id="student-majors">0</strong><span>Chuyên ngành</span>
+            </div>
+          </div> -->
+          <h2 id="student-list-title">Danh sách sinh viên</h2>
+          <div class="student-toolbar">
+            <!-- <input
+              id="student-search"
+              type="search"
+              placeholder="Tìm theo tên hoặc email..."
+              aria-label="Tìm sinh viên"
+            /><select id="student-filter">
+              <option value="all">Tất cả trạng thái</option>
+              <option value="active">Đang học</option>
+              <option value="inactive">Bảo lưu</option></select
+            ><select id="student-sort">
+              <option value="name">Sắp xếp: Tên A-Z</option>
+              <option value="newest">Mới nhất</option>
+              <option value="age">Tuổi tăng dần</option>
+            </select> -->
+            <!-- <button
+              class="student-button show-all"
+              type="button"
+              id="student-show-all"
+            >
+              Hiện tất cả
+            </button> -->
+          </div>
+          <div class="student-table-wrap">
+            <table class="student-table">
+              <thead>
+                <tr>
+                  <th>Sinh viên</th>
+                  <th>Tuổi / Giới tính</th>
+                  <th>Chuyên ngành</th>
+                  <th>Trạng thái</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="student-table-body"></tbody>
+            </table>
+          </div>
+          <div class="student-empty" id="student-empty" hidden>
+            Chưa có sinh viên phù hợp.
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
