@@ -254,9 +254,85 @@
     placeholder="Nhập các phần tử của mảng a, cách nhau bằng dấu phẩy"
   /><br />
 
+    <label for="new-element">Thêm 1 phần tử mới vào mảng:</label>
+  <input
+    type="text"
+    id="new-element"
+    placeholder="Nhập phần tử mới"
+  /><br />
+
+    <label for="remove-index">Xoá phần tử thứ k của mảng a:</label>
+  <input
+    type="text"
+    id="remove-index"
+    placeholder="Nhập vị trí k của phần tử cần xoá"
+  /><br />
+
+    <label for="search-element">Nhập 1 số x, kiểm tra x có trong mảng a không:</label>
+  <input
+    type="text"
+    id="search-element"
+    placeholder="Nhập số x cần kiểm tra"
+  /><br />
+
+
+
   <button type="button" id="calc-btn" onclick="CalculateArray()">Tính</button
   ><br />
 
-  <label for="result-array">Kết quả:</label>
-  <input type="text" id="result-array" disabled placeholder="Kết quả" />
-  </form>
+  <label for="result-array">Các phần tử mảng:</label>
+  <p id="result-array"></p>
+
+  <label for="sum-array">Tổng các phần tử mảng:</label>
+  <input
+    type="text"
+    id="sum-array"
+    disabled
+    placeholder="Tổng các phần tử mảng"
+    > <br>
+  
+  <label for="even-array">Các phần tử chẵn của mảng:</label>
+  <p id="even-array"></p>
+  
+  <label for="sum-even-array">Tổng các phần tử chẵn của mảng:</label>
+  <input
+    type="text"
+    id="sum-even-array"
+    disabled
+    placeholder="Tổng các phần tử chẵn của mảng"> <br>
+
+  <label for="odd-array">Các phần tử lẻ của mảng:</label>
+  <p id="odd-array"></p>
+
+  <label for="sum-odd-array">Tổng các phần tử lẻ của mảng:</label>
+  <input
+    type="text"
+    id="sum-odd-array"
+    disabled
+    placeholder="Tổng các phần tử lẻ của mảng"> <br>
+
+  <label for="prime-array">Các phần tử là số nguyên tố của mảng:</label>
+  <p id="prime-array"></p>
+  
+  <label for="sum-prime-array">Tổng các phần tử là số nguyên tố của mảng:</label>
+  <input
+    type="text"
+    id="sum-prime-array"
+    disabled
+    placeholder="Tổng các phần tử là số nguyên tố của mảng"> <br>
+
+
+
+  <label for="out-array">Kết quả sau khi thêm phần tử:</label>
+  <p id="out-array"></p>
+
+
+
+  <label for="r2">Kết quả sau khi xoá phần tử:</label>
+  <p id="r2"></p>
+
+
+
+  <label for="search-result">Kết quả sau khi kiểm tra:</label>
+  <p id="search-result"></p>
+</form>

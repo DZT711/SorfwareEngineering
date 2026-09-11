@@ -184,3 +184,82 @@ function CheckAnswer() {
         alert('Sai rồi!');
     }
 }
+
+function CalculateArray() {
+    const arrayInput = document.getElementById('array-elements')?.value;
+    const array = arrayInput.split(',').map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
+    const newElement = document.getElementById('new-element')?.value;
+    const removeIndex = document.getElementById('remove-index')?.value;
+    const searchElement = document.getElementById('search-element')?.value;
+    const arrLength = document.getElementById('array-size')?.value;
+    if (array.length === 0) {
+        document.getElementById('result-array').textContent = 'Vui lòng nhập các phần tử của mảng';
+        document.getElementById('even-array').textContent = 'Vui lòng nhập các phần tử của mảng';
+        document.getElementById('odd-array').textContent = 'Vui lòng nhập các phần tử của mảng';
+        document.getElementById('prime-array').textContent = 'Vui lòng nhập các phần tử của mảng';
+        document.getElementById('out-array').textContent = 'Vui lòng nhập các phần tử của mảng';
+        document.getElementById('r2').textContent = 'Vui lòng nhập các phần tử của mảng';
+        document.getElementById('search-result').textContent = 'Vui lòng nhập các phần tử của mảng';
+        return;
+    }
+    else if (array.length != arrLength) {
+        document.getElementById('result-array').textContent = 'Số lượng phần tử không khớp với kích thước mảng';
+        document.getElementById('even-array').textContent = 'Số lượng phần tử không khớp với kích thước mảng';
+        document.getElementById('odd-array').textContent = 'Số lượng phần tử không khớp với kích thước mảng';
+        document.getElementById('prime-array').textContent = 'Số lượng phần tử không khớp với kích thước mảng';
+        document.getElementById('out-array').textContent = 'Số lượng phần tử không khớp với kích thước mảng';
+        document.getElementById('r2').textContent = 'Số lượng phần tử không khớp với kích thước mảng';
+        document.getElementById('search-result').textContent = 'Số lượng phần tử không khớp với kích thước mảng';
+    }
+    else {
+        let sum = 0;
+        let evenArray = [];
+        let oddArray = [];
+        let primeArray = [];
+        let outArray = [];
+        let searchResult = '';
+
+        document.getElementById('result-array').textContent = array.join(', ');
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i];
+            if (array[i] % 2 === 0) {
+                evenArray.push(array[i]);
+            } else {
+                oddArray.push(array[i]);
+            }
+            if (isPrimeNumber(array[i])) {
+                primeArray.push(array[i]);
+            }
+        }
+        document.getElementById('sum-array').value = sum;
+        document.getElementById('even-array').textContent = evenArray.join(', ');
+        document.getElementById('sum-even-array').value = evenArray.reduce((a, b) => a + b, 0);
+        document.getElementById('odd-array').textContent = oddArray.join(', ');
+        document.getElementById('sum-odd-array').value = oddArray.reduce((a, b) => a + b, 0);
+        document.getElementById('prime-array').textContent = primeArray.join(', ');
+        document.getElementById('sum-prime-array').value = primeArray.reduce((a, b) => a + b, 0);
+        newarray = [...array];
+        if (newElement) {
+            newarray.push(parseFloat(newElement));
+        }
+        document.getElementById('out-array').textContent = newarray.join(', ');
+        if (removeIndex) {
+            const index = parseInt(removeIndex)+1;
+            if (!isNaN(index) && index >= 0 && index < newarray.length) {
+                newarray.splice(index, 1);
+                document.getElementById('r2').textContent = newarray.join(', ');
+            } else {
+                document.getElementById('r2').textContent = 'Chỉ số không hợp lệ';
+            }
+        }
+        if (searchElement) {
+            const element = parseFloat(searchElement);
+            const index = newarray.indexOf(element);
+            if (index !== -1) {
+                document.getElementById('search-result').textContent = `Số ${element} có trong mảng tại vị trí ${index}`;
+            } else {
+                document.getElementById('search-result').textContent = `Số ${element} không có trong mảng`;
+            }
+        }
+    }
+}
