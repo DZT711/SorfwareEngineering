@@ -263,3 +263,79 @@ function CalculateArray() {
         }
     }
 }
+
+function ProcessingString() {
+    const s = document.getElementById('input-string')?.value;
+    const k = parseInt(document.getElementById('left-k')?.value);
+    const k2 = parseInt(document.getElementById('k2')?.value);
+    const n = parseInt(document.getElementById('n')?.value);
+
+    console.log('[ProcessingString] inputs:', { s, k, k2, n });
+
+    if (isNaN(k) || isNaN(k2) || isNaN(n)) {
+        console.log('[ProcessingString] invalid input: k, k2, and n must be numbers');
+        document.getElementById('left-k-chars').value = 'Invalid input';
+        document.getElementById('right-k-chars').value = 'Invalid input';
+        document.getElementById('n-k-chars').value = 'Invalid input';
+        return;
+    }
+    else if (k < 0 || k2 < 0 || n < 0) {
+        console.log('[ProcessingString] invalid input: values cannot be negative');
+        document.getElementById('left-k-chars').value = 'Invalid input';
+        document.getElementById('right-k-chars').value = 'Invalid input';
+        document.getElementById('n-k-chars').value = 'Invalid input';
+        document.getElementById('length').value = 'Invalid input';
+
+        return;
+    }
+    else if(k > s.length || k2 > s.length || n > s.length - k2) {
+        console.log('[ProcessingString] invalid input: requested range exceeds string length', {
+            stringLength: s.length,
+            k,
+            k2,
+            n
+        });
+        document.getElementById('left-k-chars').value = 'Invalid input';
+        document.getElementById('right-k-chars').value = 'Invalid input';
+        document.getElementById('n-k-chars').value = 'Invalid input';
+        
+        return;
+    }
+    else if (s.length === 0) {
+        console.log('[ProcessingString] empty string');
+        document.getElementById('left-k-chars').value = '';
+        document.getElementById('right-k-chars').value = '';
+        document.getElementById('n-k-chars').value = '';
+        document.getElementById('length').value = '';
+        document.getElementById('trimmed-string').value = '';
+        document.getElementById('word-count').value = 0;
+        
+        return;
+    }
+    else {
+        
+        document.getElementById('left-k-chars').value = s.substring(0, k);
+        document.getElementById('right-k-chars').value = s.substring(s.length - k, s.length);
+        document.getElementById('n-k-chars').value = s.substring(k2, k2 + n);
+        document.getElementById('length').value = s.length;
+        document.getElementById('trimmed-string').value = s.trim();
+        document.getElementById('word-count').value = s.trim().split(/\s+/).filter(Boolean).length;
+        let subString = [];
+        for (let i = 0; i < s.length; i++) {
+            for (let j = i + 1; j <= s.length; j++) {
+                subString.push(s.substring(i, j));
+            }
+        }
+            document.getElementById('characters-each-line').textContent =Array.from(s).join('\n');
+            console.log('[ProcessingString] results:', {
+            length: s.length,
+            left: s.substring(0, k),
+            right: s.substring(s.length - k),
+            nCharacters: s.substring(k2, k2 + n),
+            trimmed: s.trim(),
+            wordCount: s.trim().split(/\s+/).filter(Boolean).length,
+            substringCount: subString.length
+        });
+    }
+
+}
